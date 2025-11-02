@@ -1,0 +1,34 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <!-- Logo/Brand -->
+    <div class="nav-brand">
+      <a routerLink="/dashboard" class="brand-link">Store Manager</a>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="nav-menu" [class.active]="isMenuOpen">
+      
+      <a class="nav-link" routerLink="/products" routerLinkActive="active" (click)="closeMenu()">
+        <i class="icon">📦</i>
+        Products
+      </a>
+      <a class="nav-link" routerLink="/orders" routerLinkActive="active" (click)="closeMenu()">
+        <i class="icon">🛒</i>
+        Orders
+      </a>
+      <div class="nav-actions">
+        <a class="nav-link logout" (click)="logout()">
+          <i class="icon">🚪</i>
+          Logout
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="nav-toggle" (click)="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </div>
+</nav>

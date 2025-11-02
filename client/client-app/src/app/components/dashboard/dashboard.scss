@@ -1,0 +1,145 @@
+// Variables
+$primary-color: #2563eb;
+$text-primary: #1e293b;
+$text-secondary: #64748b;
+$border-color: #e2e8f0;
+$background-color: #ffffff;
+$hover-color: #f8fafc;
+
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: calc(100vh - 64px);
+}
+
+// Header Section
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.dashboard-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.dashboard-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.125rem;
+  color: $text-secondary;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+// Quick Actions Grid
+.quick-actions {
+  padding: 0 1rem;
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+// Action Cards
+.action-card {
+  display: block;
+  background: $background-color;
+  border: 1px solid $border-color;
+  border-radius: 12px;
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $primary-color;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: translateY(-2px);
+  }
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: 0.75rem;
+}
+
+.card-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: $text-secondary;
+  line-height: 1.5;
+  margin: 0;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1.5rem 1rem;
+  }
+
+  .dashboard-title {
+    font-size: 2rem;
+  }
+
+  .dashboard-subtitle {
+    font-size: 1rem;
+  }
+
+  .action-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .action-card {
+    padding: 1.5rem;
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    margin-bottom: 2rem;
+  }
+
+  .dashboard-title {
+    font-size: 1.75rem;
+  }
+
+  .action-card {
+    padding: 1.25rem;
+  }
+}

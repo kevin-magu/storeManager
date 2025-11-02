@@ -1,0 +1,65 @@
+// Variables
+$text-color: #64748b;
+$link-color: #2563eb;
+$border-color: #e2e8f0;
+$hover-color: #1e40af;
+
+.footer {
+  background-color: #ffffff;
+  border-top: 1px solid $border-color;
+  margin-top: auto;
+  padding: 1.5rem 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: $text-color;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.separator {
+  color: #cbd5e1;
+}
+
+.github-link {
+  color: $link-color;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: $hover-color;
+    text-decoration: underline;
+  }
+}
+
+// Responsive design
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem 0;
+  }
+  
+  .footer-text {
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: center;
+  }
+  
+  .separator {
+    display: none;
+  }
+}
