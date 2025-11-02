@@ -1,1 +1,63 @@
-<p>products works!</p>
+<div class="products-container">
+  <!-- Header -->
+  <div class="products-header">
+    <h1 class="products-title">All Products</h1>
+    <p class="products-subtitle">Manage your product inventory</p>
+    <button class="add-btn" routerLink="/add-product">
+      <span class="btn-icon">➕</span>
+      Add New Product
+    </button>
+  </div>
+
+  <!-- Loading State -->
+  <div class="loading" *ngIf="loading">
+    <div class="loading-spinner"></div>
+    <p>Loading products...</p>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="products-grid" *ngIf="!loading && products.length > 0">
+    <div class="product-card" *ngFor="let product of products">
+      <div class="card-header">
+        <h3 class="product-name">{{ product.name }}</h3>
+        <span class="product-price">Ksh {{ product.price }}</span>
+      </div>
+      
+      <p class="product-description" *ngIf="product.description">
+        {{ product.description }}
+      </p>
+      
+      <div class="product-details">
+        <div class="detail-item">
+          <span class="detail-label">Quantity:</span>
+          <span class="detail-value" [class.low-stock]="product.quantity < 10">
+            {{ product.quantity }}
+          </span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Added:</span>
+          <span class="detail-value">{{ formatDate(product.dateAdded) }}</span>
+        </div>
+      </div>
+
+      <div class="card-actions">
+        <button class="action-btn edit-btn" (click)="editProduct(product)">
+          ✏️ Edit
+        </button>
+        <button class="action-btn delete-btn" (click)="deleteProduct(product._id!)">
+          🗑️ Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty State -->
+  <div class="empty-state" *ngIf="!loading && products.length === 0">
+    <div class="empty-icon">📦</div>
+    <h3>No Products Found</h3>
+    <p>Get started by adding your first product to the store.</p>
+    <button class="add-btn" routerLink="/add-product">
+      Add Your First Product
+    </button>
+  </div>
+</div>

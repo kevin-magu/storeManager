@@ -1,0 +1,177 @@
+// Variables
+$primary-color: #2563eb;
+$primary-hover: #1d4ed8;
+$text-color: #1e293b;
+$text-light: #64748b;
+$border-color: #e2e8f0;
+$background-color: #ffffff;
+$input-bg: #f8fafc;
+
+.add-product {
+  min-height: calc(100vh - 64px);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.form-container {
+  background: $background-color;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid $border-color;
+  max-width: 500px;
+  width: 100%;
+}
+
+.form-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: $text-color;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: $text-color;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 1rem;
+}
+
+.form-input {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border: 1.5px solid $border-color;
+  border-radius: 40px;
+  background: $input-bg;
+  transition: all 0.3s ease;
+  outline: none;
+  
+  &::placeholder {
+    color: #94a3b8;
+    font-size: 0.8rem;
+  }
+  
+  &:focus {
+    border-color: $primary-color;
+    background: $background-color;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+  
+  &:hover {
+    border-color: #cbd5e1;
+  }
+}
+
+.textarea {
+  border-radius: 20px !important;
+  resize: vertical;
+  min-height: 80px;
+}
+
+// Round Submit Button
+.submit-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  padding: 0.875rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: fit-content;
+  align-self: center;
+  
+  &:hover {
+    background: $primary-hover;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.btn-text {
+  font-size: 0.8rem;
+}
+
+.btn-icon {
+  font-size: 1rem;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .add-product {
+    padding: 1rem;
+  }
+  
+  .form-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .form-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+  }
+  
+  .form-title {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product-form {
+    gap: 1rem;
+  }
+  
+  .form-input {
+    padding: 0.675rem 1.25rem;
+    font-size: 0.8rem;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+  }
+}

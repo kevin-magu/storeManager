@@ -1,0 +1,80 @@
+<div class="add-product" ngSkipHydration>
+  <div class="form-container">
+    <h1 class="form-title">Edit Product</h1>
+    
+    <form class="product-form" (ngSubmit)="onSubmit()">
+      <!-- Product Name -->
+      <div class="form-group">
+        <label class="form-label">Product Name</label>
+        <input 
+          type="text" 
+          class="form-input"
+          placeholder="Enter product name"
+          [(ngModel)]="product.name"
+          name="name"
+          required>
+      </div>
+
+      <!-- Price -->
+      <div class="form-group">
+        <label class="form-label">Price (Ksh)</label>
+        <input 
+          type="number" 
+          class="form-input"
+          placeholder="0.00"
+          step="0.01"
+          min="0"
+          [(ngModel)]="product.price"
+          name="price"
+          required>
+      </div>
+
+      <!-- Quantity -->
+      <div class="form-group">
+        <label class="form-label">Quantity</label>
+        <input 
+          type="number" 
+          class="form-input"
+          placeholder="0"
+          min="0"
+          [(ngModel)]="product.quantity"
+          name="quantity"
+          required>
+      </div>
+
+      <!-- Date Added -->
+      <div class="form-group">
+        <label class="form-label">Date Added</label>
+        <input 
+          type="date" 
+          class="form-input"
+          [(ngModel)]="product.dateAdded"
+          name="dateAdded"
+          required>
+      </div>
+
+      <!-- Description - Fix the textarea whitespace -->
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <textarea 
+          class="form-input textarea"
+          placeholder="Product description..."
+          rows="3"
+          [(ngModel)]="product.description"
+          name="description"></textarea>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="form-actions">
+        <button type="submit" class="submit-btn">
+          <span class="btn-text">Update Product</span>
+          <span class="btn-icon">💾</span>
+        </button>
+        <button type="button" class="cancel-btn" (click)="onCancel()">
+          <span class="btn-text">Cancel</span>
+          <span class="btn-icon">❌</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
