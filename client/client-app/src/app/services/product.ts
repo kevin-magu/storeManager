@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 export class ProductService {
   private apiUrl = 'https://storemanager-feqt.onrender.com/api/products';
 
+  //private apiUrl = 'http://localhost:5000/api/products';
+
   constructor(private http: HttpClient) { }
 
   getProducts(): Observable<any> {
