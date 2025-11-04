@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only server.ts",
     "build": "tsc",
-    "start": "node dist/server.js",
-    "clean": "rm -rf dist"
+    "start": "node dist/Server.js"
   },
   "engines": {
     "node": ">=20"
