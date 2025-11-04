@@ -1,16 +1,19 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "dist/server.js",  
+  "private": true,
+  "main": "dist/server.js",
   "scripts": {
-   "dev": "ts-node-dev --respawn --transpile-only server.ts",
-  "start": "node ../dist/server.js",
-  "build": "tsc"
+    "dev": "ts-node-dev --respawn --transpile-only server.ts",
+    "build:client": "npm run build --prefix ../client/client-app",
+    "build:server": "tsc",
+    "build": "npm run build:client && npm run build:server",
+    "start": "node dist/server.js",
+    "postinstall": "npm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
