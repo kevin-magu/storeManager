@@ -1,35 +1,24 @@
 {
   "compilerOptions": {
-    // Target modern Node.js (Render uses Node 20+)
     "target": "ES2022",
     "module": "commonjs",
     "lib": ["ES2022"],
-
-    // Output
     "outDir": "./dist",
     "rootDir": "./",
-
-    // Type safety
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-
-    // Production optimizations
     "removeComments": true,
     "noEmitOnError": true,
-
-    // Optional: smaller builds, faster startup
-    "stripInternal": true,
-
-    // Keep for debugging (Render logs)
-    "sourceMap": true,
-
-    // Remove in production if you don't use declarations
-    // "declaration": false,
-    // "declarationMap": false
+    "sourceMap": true
   },
-  "include": ["**/*.ts"],
+  "include": [
+    "server.ts",           // ← ADD THIS
+    "routes/**/*.ts",
+    "models/**/*.ts",
+    "middleware/**/*.ts"
+  ],
   "exclude": ["node_modules", "dist"]
 }
