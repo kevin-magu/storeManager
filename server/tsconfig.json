@@ -4,7 +4,7 @@
     "module": "commonjs",
     "lib": ["ES2022"],
     "outDir": "./dist",
-    "rootDir": ".",
+    "rootDir": "./",  // ← Add slash
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -15,10 +15,7 @@
     "sourceMap": true
   },
   "include": [
-    "server.ts",           // ← ADD THIS
-    "routes/**/*.ts",
-    "models/**/*.ts",
-    "middleware/**/*.ts"
+    "**/*.ts"  // ← This will include server.ts and all other .ts files
   ],
   "exclude": ["node_modules", "dist"]
 }
