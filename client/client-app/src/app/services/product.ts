@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl = 'http://localhost:5000/api/products';
+  private apiUrl = 'https://storemanager-feqt.onrender.com/api/products';
 
   constructor(private http: HttpClient) { }
 
