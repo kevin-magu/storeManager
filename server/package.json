@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only server.ts",
-    "build:client": "npm run build --prefix ../client/client-app",
+    "build:client": "npm ci --prefix ../client/client-app && npm run build --prefix ../client/client-app",
     "build:server": "tsc",
     "build": "npm run build:client && npm run build:server",
     "start": "node dist/server.js",
