@@ -12,13 +12,11 @@
         <i class="icon">📦</i>
         Products
       </a>
-     
-      <div class="nav-actions">
-        <a class="nav-link logout" >
-          <i class="icon">+</i>
-          Add Product
-        </a>
-      </div>
+      <a class="nav-link" routerLink="/add-product" routerLinkActive="active" (click)="closeMenu()">
+        <i class="icon">➕</i>
+        Add Product
+      </a>
+      
     </div>
 
     <!-- Mobile Menu Toggle -->
