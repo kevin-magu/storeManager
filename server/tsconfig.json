@@ -11,7 +11,7 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "removeComments": true,
-    "noEmitOnError": false,
+    "noEmitOnError": true,
     "sourceMap": true
   },
   "include": [
