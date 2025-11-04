@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Variables
 $primary-color: #2563eb;
 $danger-color: #dc2626;
@@ -53,7 +55,7 @@ $low-stock-color: #dc2626;
   text-decoration: none;
 
   &:hover {
-    background: darken($primary-color, 10%);
+    background: color.adjust($primary-color, $lightness: 10%);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   }

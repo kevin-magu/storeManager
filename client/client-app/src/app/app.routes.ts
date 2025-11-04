@@ -13,7 +13,13 @@ export const routes: Routes = [
   { path: 'products', component: Products },
   { path: 'orders', component: Orders },
   { path: 'add-product', component: AddProduct },
-  { path: 'edit-product', component: EditProduct },
-  // Wildcard route MUST be last
+  { 
+    path: 'edit-product/:id', 
+    component: EditProduct,
+    providers: [
+      // This disables SSR for this route
+      { provide: 'PRERENDER', useValue: false }
+    ]
+  },
   { path: '**', redirectTo: '/login' }
 ];
